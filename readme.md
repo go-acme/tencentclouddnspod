@@ -1,6 +1,6 @@
-## DNS Pod Fork
+## Tencent DNS Pod Fork
 
-This fork is made for lego of [tencentcloud/dnspod](https://github.com/TencentCloud/tencentcloud-sdk-go/tree/master/tencentcloud/dnspod), and contains no other changes to the original code than the module name and method signatures.
+This fork is made for lego of [tencentcloud/dnspod](https://github.com/TencentCloud/tencentcloud-sdk-go/tree/HEAD/tencentcloud/dnspod), and contains no other changes to the original code than the module name and method signatures.
 
 This is a special fork: the methods of the structure `Client` are converted to functions which use `Client` as a parameter.
 
@@ -16,6 +16,6 @@ The code of the module is inside the branch [`modifiedclient`](https://github.co
 
 The script to update the fork is `update.sh`.
 
-The env var `LIB_VERSION` must be updated to reference the targeted version.
+The env var `LIB_VERSION` can be updated to reference a specific targeted version.
 
 I update the branch "manually" by calling the script regularly.

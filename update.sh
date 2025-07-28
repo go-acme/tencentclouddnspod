@@ -1,6 +1,9 @@
 #!/bin/bash -e
 
-LIB_VERSION=v1.0.1208
+## Get latest version of the module
+# https://pkg.go.dev/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/dnspod?tab=versions
+LIB_VERSION=$(go list -m -json github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/dnspod@latest | jq -r '.Version')
+# LIB_VERSION=v1.0.1208
 
 SRC_ORG=TencentCloud
 DEST_ORG='go-acme'
@@ -19,20 +22,20 @@ DEST_DIR=$(mktemp -d)
 #############
 
 ## Fake fork remote
-#DEST_REMOTE=$(mktemp -d)
+# DEST_REMOTE=$(mktemp -d)
 #
-#git init -q --bare ${DEST_REMOTE}
+# git init -q --bare ${DEST_REMOTE}
 #
-#DEST_TEMP=$(mktemp -d)
-#git clone -q ${DEST_REMOTE} ${DEST_TEMP}
+# DEST_TEMP=$(mktemp -d)
+# git clone -q ${DEST_REMOTE} ${DEST_TEMP}
 #
-#cd ${DEST_TEMP}
-#git switch -q -c ${DEST_BRANCH}
-#git commit -q -m "Initial empty commit" --allow-empty
-#git push -q -u origin ${DEST_BRANCH}
-#cd ..
+# cd ${DEST_TEMP}
+# git switch -q -c ${DEST_BRANCH}
+# git commit -q -m "Initial empty commit" --allow-empty
+# git push -q -u origin ${DEST_BRANCH}
+# cd ..
 #
-#rm -rf ${DEST_TEMP}
+# rm -rf ${DEST_TEMP}
 
 ## Prepare the fork
 # git clone -q --single-branch git@github.com:${DEST_ORG}/${DEST_REPO_NAME}.git /tmp/${DEST_REPO_NAME}
