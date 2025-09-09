@@ -2,7 +2,7 @@
 
 ## Get latest version of the module
 # https://pkg.go.dev/github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/dnspod?tab=versions
-LIB_VERSION=$(go list -m -json github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/dnspod@latest | jq -r '.Version')
+LIB_VERSION=$(go list -u -m -retracted -json github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/dnspod@latest | jq -r '.Version')
 # LIB_VERSION=v1.0.1208
 
 SRC_ORG=TencentCloud
