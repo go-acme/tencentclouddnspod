@@ -53,6 +53,9 @@ const (
 	// 该域名属于企业邮用户
 	FAILEDOPERATION_DOMAININENTERPRISEMAILACCOUNT = "FailedOperation.DomainInEnterpriseMailAccount"
 
+	// 域名已升级为企业套餐，但目前位于个人账号，请与销售联系。
+	FAILEDOPERATION_DOMAINISENTERPRISETYPE = "FailedOperation.DomainIsEnterpriseType"
+
 	// 该域名为腾讯云 DNSPod 重点保护资源，为了避免误操作造成的业务影响，域名禁止自行操作删除。如果您确认需要删除域名，请先联系您的客户经理，我们将竭诚为您提供技术支持。
 	FAILEDOPERATION_DOMAINISKEYDOMAIN = "FailedOperation.DomainIsKeyDomain"
 
@@ -79,6 +82,9 @@ const (
 
 	// 文件不存在或文件还未生成
 	FAILEDOPERATION_FILENOTEXIST = "FailedOperation.FileNotExist"
+
+	// 不能绑定到免费账号。
+	FAILEDOPERATION_FREEFORUMUIDNOTALLOWED = "FailedOperation.FreeForumUidNotAllowed"
 
 	// 您操作过于频繁，请稍后重试
 	FAILEDOPERATION_FREQUENCYLIMIT = "FailedOperation.FrequencyLimit"
@@ -131,11 +137,17 @@ const (
 	// 请求量统计数据暂时不可用，请稍后再试。
 	FAILEDOPERATION_TEMPORARYERROR = "FailedOperation.TemporaryError"
 
+	// 按腾讯云域名新规范，tencentyun.com不允许新增子域名和修改存量解析
+	FAILEDOPERATION_TENCENTCLOUDFORBID = "FailedOperation.TencentCloudForbid"
+
 	// 不能转移到企业账号。
 	FAILEDOPERATION_TRANSFERTOENTERPRISEDENIED = "FailedOperation.TransferToEnterpriseDenied"
 
 	// 不能转移到个人账号。
 	FAILEDOPERATION_TRANSFERTOPERSONDENIED = "FailedOperation.TransferToPersonDenied"
+
+	// 没有开启D令牌。
+	FAILEDOPERATION_TWOSTEPNOTON = "FailedOperation.TwoStepNotOn"
 
 	// 操作未响应，请稍后重试。
 	FAILEDOPERATION_UNKNOWERROR = "FailedOperation.UnknowError"
@@ -179,6 +191,9 @@ const (
 	// 创建批量域名任务失败，原因：内部错误。
 	INVALIDPARAMETER_BATCHDOMAINCREATEACTIONERROR = "InvalidParameter.BatchDomainCreateActionError"
 
+	// 列表中存在您没有权限的域名
+	INVALIDPARAMETER_BATCHDOMAINNOTAUTH = "InvalidParameter.BatchDomainNotAuth"
+
 	// 您有批量任务未执行完成，请等待完成后继续添加。
 	INVALIDPARAMETER_BATCHLIMITUNDO = "InvalidParameter.BatchLimitUndo"
 
@@ -218,6 +233,9 @@ const (
 	// 自定义错误信息。
 	INVALIDPARAMETER_CUSTOMMESSAGE = "InvalidParameter.CustomMessage"
 
+	// 您的帐户下没有 企业II 或 企业III 的VIP套餐，不能开启D令牌。
+	INVALIDPARAMETER_DTOKENNOTSUPPORT = "InvalidParameter.DTokenNotSupport"
+
 	// 数据过期,请重新提交。
 	INVALIDPARAMETER_DATAEXPIRED = "InvalidParameter.DataExpired"
 
@@ -247,6 +265,12 @@ const (
 
 	// 别名编号错误。
 	INVALIDPARAMETER_DOMAINALIASIDINVALID = "InvalidParameter.DomainAliasIdInvalid"
+
+	// 目标域名已经是VIP域名，无法替换。
+	INVALIDPARAMETER_DOMAINALREADYVIP = "InvalidParameter.DomainAlreadyVip"
+
+	// 一个任务里不能存在相同的域名。
+	INVALIDPARAMETER_DOMAINDUPLICATED = "InvalidParameter.DomainDuplicated"
 
 	// 域名编号不正确。
 	INVALIDPARAMETER_DOMAINIDINVALID = "InvalidParameter.DomainIdInvalid"
@@ -281,6 +305,9 @@ const (
 	// 该域名未备案，无法添加 URL 记录。
 	INVALIDPARAMETER_DOMAINNOTBEIAN = "InvalidParameter.DomainNotBeian"
 
+	// 域名未生效。
+	INVALIDPARAMETER_DOMAINNOTEFFECTIVE = "InvalidParameter.DomainNotEffective"
+
 	// 域名还没有注册，无法添加。
 	INVALIDPARAMETER_DOMAINNOTREGED = "InvalidParameter.DomainNotReged"
 
@@ -292,6 +319,9 @@ const (
 
 	// 域名自己无需进行复制。
 	INVALIDPARAMETER_DOMAINSELFNOCOPY = "InvalidParameter.DomainSelfNoCopy"
+
+	// 存在进行中的任务，请稍后提交。
+	INVALIDPARAMETER_DOMAINTASKNOTFINISHED = "InvalidParameter.DomainTaskNotFinished"
 
 	// 域名过长。
 	INVALIDPARAMETER_DOMAINTOOLONG = "InvalidParameter.DomainTooLong"
@@ -316,6 +346,9 @@ const (
 
 	// 结束时间超出范围
 	INVALIDPARAMETER_ENDDATEBEYONDRANGE = "InvalidParameter.EndDateBeyondRange"
+
+	// 无法查询 DNS 地址，请确认域名是否正确。
+	INVALIDPARAMETER_GETNSFAIL = "InvalidParameter.GetNsFail"
 
 	// 商品子类型无效。
 	INVALIDPARAMETER_GOODSCHILDTYPEINVALID = "InvalidParameter.GoodsChildTypeInvalid"
@@ -590,6 +623,15 @@ const (
 	// 未实名认证用户，请先完成实名认证再操作。
 	INVALIDPARAMETER_UNREALNAMEUSER = "InvalidParameter.UnrealNameUser"
 
+	// 不支持的筛选类型
+	INVALIDPARAMETER_UNSUPPORTEDFILTERTYPE = "InvalidParameter.UnsupportedFilterType"
+
+	// 更新新域名等级失败。
+	INVALIDPARAMETER_UPDATENEWGRADEFAILED = "InvalidParameter.UpdateNewGradeFailed"
+
+	// 更新旧域名等级失败。
+	INVALIDPARAMETER_UPDATEOLDGRADEFAILED = "InvalidParameter.UpdateOldGradeFailed"
+
 	// 很抱歉，您要添加的URL的内容不符合DNSPod解析服务条款，URL添加/启用失败，如需帮助请联系技术支持。
 	INVALIDPARAMETER_URLVALUEILLEGAL = "InvalidParameter.UrlValueIllegal"
 
@@ -739,6 +781,9 @@ const (
 
 	// 只支持 POST 方法提交数据。
 	OPERATIONDENIED_POSTREQUESTACCEPTONLY = "OperationDenied.PostRequestAcceptOnly"
+
+	// 资源已经绑定
+	OPERATIONDENIED_RESOURCEALREADYBIND = "OperationDenied.ResourceAlreadyBind"
 
 	// 该资源不允许续费。
 	OPERATIONDENIED_RESOURCENOTALLOWRENEW = "OperationDenied.ResourceNotAllowRenew"
