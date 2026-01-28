@@ -69,6 +69,7 @@ git rm -f -r --ignore-unmatch '*'
 
 ## Copy the code from the sources
 cp -r ${SRC_DIR}/tencentcloud/dnspod/. .
+cp -r ${SRC_DIR}/LICENSE .
 
 ## Change module name
 go mod edit -module github.com/${DEST_ORG}/${DEST_REPO_NAME}
